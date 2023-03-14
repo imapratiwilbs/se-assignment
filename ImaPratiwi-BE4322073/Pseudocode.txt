@@ -1,0 +1,23 @@
+PROGRAM DrinkOrderOnline
+
+START
+SHOW "Page Menu Minuman"
+
+READ AND WRITE "Choose Drink" with object
+    IF "Want to Add Another Order?" equals "true"
+        PRINT "Choose Drink"
+    ELSE 
+        PRINT "Select Payment Method"
+
+THEN 
+    CHOOSE method_payment
+        IF "Using Go-Pay" && balance > cost equals "true"
+        	PAYMENT SUCCESS
+    ELSE 
+        PRINT "Select Payment Method"
+
+THEN 
+    Waiting For Order
+    Order has Arrived
+
+FINISH
